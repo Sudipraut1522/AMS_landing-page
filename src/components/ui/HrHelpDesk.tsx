@@ -7,7 +7,7 @@ const HrHelpDesk: React.FC = () => {
       <div className=" grid md:grid-cols-2">
         <div className=" flex flex-col py-20 text-gray-600 gap-6">
           <h1 className="lg:text-[36px] font-bold text-gray-800">
-            TIME AND ATTENDANCE
+            HR HELP DESK{" "}
           </h1>
           <p>
             pAdapt to new realities, work faster and smarter. Determine a

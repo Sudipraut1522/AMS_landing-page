@@ -4,6 +4,7 @@ import Navbar from "../components/ui/Navbar";
 import Home from "../page/Home";
 import Register from "../page/Register";
 import Login from "../page/Login";
+import BookADemo from "../page/BookADemo";
 
 const Router: React.FC = () => {
   return (
@@ -12,8 +13,9 @@ const Router: React.FC = () => {
         <Routes>
           <Route element={<Navbar />}>
             <Route path="/" element={<Home />} />
-            <Route path="/register" element={<Register />}></Route>
-            <Route path="/login" element={<Login />}></Route>
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/bookademo" element={<BookADemo />} />
           </Route>
         </Routes>
       </BrowserRouter>

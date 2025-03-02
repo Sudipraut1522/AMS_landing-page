@@ -41,7 +41,7 @@ const testimonials = [
 const Home: React.FC = () => {
   return (
     <div>
-      <div className="mt-14  md:mt-30">
+      <div className=" ">
         <Hero />
         <PlatFormFeatures />
         <HRManagement />
@@ -51,7 +51,14 @@ const Home: React.FC = () => {
         <HrHelpDesk />
 
         <section className="py-10 px-4">
-          <h2 className="text-center text-3xl font-bold mb-6">Wall of Love</h2>
+          <div className="py-6">
+            <h2 className="text-center text-3xl font-bold mb-6">
+              Wall of Love
+            </h2>
+            <p className="text-gray-400 text-center">
+              People love RapidHR ! Here is what some of our users have to say.
+            </p>
+          </div>
           <div className="p-3">
             <Swipers
               breakpoints={{
@@ -62,7 +69,7 @@ const Home: React.FC = () => {
               className="h-80 w-full"
               autoPlay={false}
               data={WallOfLoveData}
-              renderItem={(item, index) => <WallOfLove {...item} />}
+              renderItem={(item, index) => <WallOfLove key={index} {...item} />}
             />
           </div>
         </section>

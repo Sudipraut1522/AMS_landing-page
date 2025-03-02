@@ -16,10 +16,36 @@ const staggerContainer = {
   },
 };
 
+export const TrustedBy = [
+  {
+    label: "Companies",
+    value: "5+",
+    image:
+      "https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/sec-house.svg",
+  },
+  {
+    label: "Employees",
+    value: "100+",
+    image:
+      " https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/Frame-7.svg  ",
+  },
+  {
+    label: "Features",
+    value: "50+",
+    image:
+      "    https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/Frame-8.svg",
+  },
+  {
+    label: "Cities",
+    value: "5+",
+    image:
+      "https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/Frame-10.svg",
+  },
+];
 const Hero: React.FC = () => {
   return (
     <motion.section
-      className="px-4 pt-6 bg-blue-100 md:bg-white"
+      className="px-4 md:pt-6 bg-blue-100 md:bg-white"
       initial="hidden"
       animate="visible"
       variants={staggerContainer}
@@ -30,7 +56,7 @@ const Hero: React.FC = () => {
           variants={variants}
         >
           <motion.h1
-            className="text-[27px] lg:text-[55px] md:max-w-[650px] md:mx-auto font-bold md:text-center"
+            className="text-[32px] lg:text-[55px] md:max-w-[650px] md:mx-auto font-bold md:text-center"
             variants={variants}
           >
             <span className="text-primary"> All-in-One HR,</span> Payroll &
@@ -63,7 +89,7 @@ const Hero: React.FC = () => {
               <Button
                 labelClassName="font-semibold"
                 labelName="Schedule a demo"
-                className="bg-blue-600 flex justify-center text-white py-3"
+                className="bg-blue-600 flex xl:px-6 justify-center text-white py-3"
               />
               <p className="text-[14px] items-center flex gap-2 text-center">
                 <CircleCheck className="text-green-500" />
@@ -83,25 +109,22 @@ const Hero: React.FC = () => {
       <motion.div className="py-10 px-3 md:px-20" variants={variants}>
         <h1>Trusted by</h1>
         <div className="grid grid-cols-2 lg:grid-cols-4 pt-10 md:gap-10">
-          {[
-            "10k+ Companies",
-            "1.5M Employees",
-            "150+ Features",
-            "100+ Cities",
-          ].map((item, index) => (
+          {TrustedBy.map((item, index) => (
             <motion.div
               key={index}
-              className="flex gap-3 justify-center lg:border-r border-dashed"
+              className="flex gap-3 justify-center items-center lg:border-r border-dashed"
               variants={variants}
             >
-              <img
-                src="https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/sec-house.svg"
-                alt=""
-                className="hidden md:flex"
-              />
+              <div>
+                <img
+                  src={item?.image}
+                  alt=""
+                  className="hidden md:flex h-20 w-20"
+                />
+              </div>
               <div className="flex flex-col">
-                <h1 className="text-[56px] font-bold">{item.split(" ")[0]}</h1>
-                <p className="text-lg">{item.split(" ")[1]}</p>
+                <h1 className="text-[56px] font-bold"> {item?.value}</h1>
+                <p className="text-lg">{item.label}</p>
               </div>
             </motion.div>
           ))}

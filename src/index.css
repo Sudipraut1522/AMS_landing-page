@@ -5,18 +5,18 @@
 @import "swiper/css/pagination";
 
 @theme {
-  --breakpoint-md900: 57rem; /* 900px */
+  --breakpoint-md900: 61.25rem; /* 900px */
 }
 .swiper-pagination-bullet {
   border-radius: 100%;
-  background-color: #20b486;
+  background-color: blue;
   opacity: 0.3;
   transition: opacity 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
   border-radius: 50px;
-  background-color: #20b486;
+  background-color: blue;
   opacity: 1;
   transform: scale(1);
   width: 30px;

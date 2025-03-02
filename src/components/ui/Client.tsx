@@ -3,13 +3,11 @@ import Swipers from "../Swiper";
 
 const Client: React.FC = () => {
   const data = [
-    "https://imgs.search.brave.com/Nq-DtQXb8x75WpkMj8jwrPriH1FqR_BGIIrzSpAoRzY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzMzMzQ4MDI3L3Iv/aWwvZjdjNGM2LzM4/NjI2NjY2MjEvaWxf/NjAweDYwMC4zODYy/NjY2NjIxXzR1cDYu/anBn",
-    "https://imgs.search.brave.com/Nq-DtQXb8x75WpkMj8jwrPriH1FqR_BGIIrzSpAoRzY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzMzMzQ4MDI3L3Iv/aWwvZjdjNGM2LzM4/NjI2NjY2MjEvaWxf/NjAweDYwMC4zODYy/NjY2NjIxXzR1cDYu/anBn",
-    "https://imgs.search.brave.com/Nq-DtQXb8x75WpkMj8jwrPriH1FqR_BGIIrzSpAoRzY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzMzMzQ4MDI3L3Iv/aWwvZjdjNGM2LzM4/NjI2NjY2MjEvaWxf/NjAweDYwMC4zODYy/NjY2NjIxXzR1cDYu/anBn",
-    "https://imgs.search.brave.com/Nq-DtQXb8x75WpkMj8jwrPriH1FqR_BGIIrzSpAoRzY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzMzMzQ4MDI3L3Iv/aWwvZjdjNGM2LzM4/NjI2NjY2MjEvaWxf/NjAweDYwMC4zODYy/NjY2NjIxXzR1cDYu/anBn",
-    "https://imgs.search.brave.com/Nq-DtQXb8x75WpkMj8jwrPriH1FqR_BGIIrzSpAoRzY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzMzMzQ4MDI3L3Iv/aWwvZjdjNGM2LzM4/NjI2NjY2MjEvaWxf/NjAweDYwMC4zODYy/NjY2NjIxXzR1cDYu/anBn",
-    "https://imgs.search.brave.com/Nq-DtQXb8x75WpkMj8jwrPriH1FqR_BGIIrzSpAoRzY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzMzMzQ4MDI3L3Iv/aWwvZjdjNGM2LzM4/NjI2NjY2MjEvaWxf/NjAweDYwMC4zODYy/NjY2NjIxXzR1cDYu/anBn",
-    "https://imgs.search.brave.com/Nq-DtQXb8x75WpkMj8jwrPriH1FqR_BGIIrzSpAoRzY/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9pLmV0/c3lzdGF0aWMuY29t/LzMzMzQ4MDI3L3Iv/aWwvZjdjNGM2LzM4/NjI2NjY2MjEvaWxf/NjAweDYwMC4zODYy/NjY2NjIxXzR1cDYu/anBn",
+    "https://ayata.com.np/images/companies/10.png ",
+    "https://ayata.com.np/images/companies/9.png  ",
+    "https://ayata.com.np/images/companies/7.png",
+    "https://ayata.com.np/images/companies/8.png",
+    "https://ayata.com.np/images/companies/5.png",
   ];
 
   return (
@@ -27,7 +25,7 @@ const Client: React.FC = () => {
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 4 },
           }}
-          className="w-full h-[150px]"
+          className="w-full "
           data={data}
           renderItem={(item, index) => (
             <div className="flex justify-center items-center z-10" key={index}>

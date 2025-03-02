@@ -1,5 +1,5 @@
 import React from "react";
-import Features from "./Features";
+import Features, { Feature } from "./Features";
 
 const PlatFormFeatures: React.FC = () => {
   return (
@@ -14,14 +14,14 @@ const PlatFormFeatures: React.FC = () => {
       </div>
 
       <div className="grid sm:grid-cols-2 md900:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Features />
-        <Features />
-        <Features />
-        <Features />
-        <Features />
-        <Features />
-        <Features />
-        <Features />
+        {Feature?.map((feature, index) => (
+          <Features
+            key={index}
+            description={feature?.description}
+            icon={feature?.icon}
+            title={feature?.title}
+          />
+        ))}
       </div>
     </section>
   );

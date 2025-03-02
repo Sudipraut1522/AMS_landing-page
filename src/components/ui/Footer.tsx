@@ -11,14 +11,11 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-6 ">
               <h1 className="text-4xl font-black py-3">AMS</h1>
               <p>
-                RapidHR is a product of RapidData IT Solutions Pvt Ltd, India
-                and is a leading system Integrator with many years of expertise
-                in implementing solutions to various corporations across the
-                world. We help our clients to fully digitize their operations,
-                improve their KPIs and massively optimize their operational
-                cost. Our belief in the values of trust, transparency,
-                flexibility and value-centricity ensures the continued pursuit
-                of our customers best interests.
+                Ayata seeks to empower people with innovative digital
+                technology. Our mission is to deliver best services to our
+                clients, become one of the top service providers in the market
+                and build multiple initiatives to solve real problems with
+                technology of the future.
               </p>
             </div>
           </div>
@@ -107,19 +104,15 @@ const Footer: React.FC = () => {
                 <ul className="flex flex-col gap-1">
                   <li className="flex items-center gap-2">
                     <Mail size={20} />
-                    <span>sales@rapiddatatech.com</span>
+                    <span>hi@ayata.com.np</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Phone size={20} />
-                    <span>+91-9751180700</span>
+                    <span>+ (+977) 9851171649</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <MapPin size={20} />
-                    <span>
-                      A Block 1st Floor, Tecci Park, 285, Rajiv Gandhi Salai,
-                      Kumaran Nagar, Elcot Sez, Karapakkam, Chennai, Tamil Nadu
-                      600119
-                    </span>
+                    <span>Anamnagar - 10, Kathmandu, Nepal 44600</span>
                   </li>
                 </ul>
               </div>
@@ -228,9 +221,11 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className=" text-white py-6 flex justify-center items-center  bg-black">
-        <p>
-          © 2022 Rapiddata IT Solutions Pvt Ltd ®. All rights reserved.
-          Disclaimer Privacy Policy Terms and Conditions
+        <p className="text-center">
+          © Copyright 2022 Ayata Incorporation. All rights reserved. Ayata
+          Incorporation is a registered 501(c)(3) for-profit organization |
+          Terms of Use | Privacy Policy | Anamnagar - 10, Kathmandu, Nepal 44600
+          | (+977) 9860463736 | (+977) 9851171649
         </p>
       </div>
     </section>
