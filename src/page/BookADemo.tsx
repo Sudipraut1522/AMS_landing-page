@@ -5,13 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 const BookADemo: React.FC = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data: any) => {
     reset();
@@ -19,7 +13,7 @@ const BookADemo: React.FC = () => {
   };
 
   return (
-    <div className="grid md900:grid-cols-2 gap-4  pt-10">
+    <div className="grid md900:grid-cols-2 place-items-center gap-4 px-[5%] pt-10">
       <div className="w-full grid">
         <img
           src="https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2024/09/StartFreeTrail.svg"
@@ -28,7 +22,7 @@ const BookADemo: React.FC = () => {
       </div>
 
       <div className="w-full grid px-6">
-        <h1 className=" text-blue-500 text-3xl grid place-content-center font-bold">
+        <h1 className=" text-blue-500 py-6 text-3xl grid place-content-center font-bold">
           Book A Demo
         </h1>
 

@@ -5,13 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 const Register: React.FC = () => {
-  const {
-    register,
-    handleSubmit,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data: any) => {
     reset();
@@ -19,7 +13,7 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="grid md900:grid-cols-2 gap-4 place-items-center h-screen">
+    <div className="grid md900:grid-cols-2 gap-4 place-items-center px-[5%] ">
       <div className="w-full grid">
         <img
           src="https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2024/09/StartFreeTrail.svg"

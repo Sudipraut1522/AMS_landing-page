@@ -12,9 +12,9 @@ const TimeAndAttendance: React.FC = () => {
 
   return (
     <section className="py-6 px-[5%] bg-gray-50" ref={sectionRef}>
-      <div className="grid md:grid-cols-2">
+      <div className="flex flex-col justify-between md900:flex-row place-items-center ">
         <motion.div
-          className="flex flex-col py-20 text-gray-600 gap-6"
+          className="flex flex-col py-20 text-gray-600 gap-6 md900:w-[50%]"
           initial="hidden"
           animate="visible"
           variants={variants.containerVariants}
@@ -26,9 +26,11 @@ const TimeAndAttendance: React.FC = () => {
             TIME AND ATTENDANCE
           </motion.h1>
           <motion.p variants={variants.itemVariants}>
-            Adapt to new realities, work faster and smarter. Determine a defined
-            future of work for your organization with a strong, flexible, global
-            HR solution.
+            Allow time for greatness and unlock higher productivity through our
+            integrated and advanced time and attendance management system.
+            Similarly create a digitally seamless onboarding experience so that
+            shortens the new employees’ time to productivity.Then set them up
+            for success and build delightful employee journeys from day one.
           </motion.p>
           <motion.ol
             className="space-y-2"
@@ -60,7 +62,7 @@ const TimeAndAttendance: React.FC = () => {
           animate="visible"
           variants={variants.imageVariants}
         >
-          <div>
+          <div className="">
             <img
               src="https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/Time-mgmt.svg"
               alt="Time management illustration"

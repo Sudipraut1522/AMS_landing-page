@@ -1,22 +1,11 @@
-"use client";
-import {
-  Briefcase,
-  Users,
-  CalendarCheck,
-  CreditCard,
-  MessageSquare,
-  ListChecks,
-  BarChart3,
-  HelpCircle,
-  Code,
-  FileText,
-} from "lucide-react";
 import type React from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChevronDown, AlignJustify } from "lucide-react";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
+import { menuItems } from "../../data/data";
 
 const Navbar: React.FC = () => {
+  const location = useLocation();
   const [openSideNav, setOpenSideNav] = useState(false);
   const [openDropdownIndex, setOpenDropdownIndex] = useState<number | null>(
     null
@@ -26,185 +15,36 @@ const Navbar: React.FC = () => {
     setOpenDropdownIndex(openDropdownIndex === index ? null : index);
   };
 
-  const menuItems = [
-    {
-      label: "HR Management",
-      submenu: [
-        {
-          icon: <Users className="text-green-600 hover:text-blue-500" />,
-          label: "Core HR",
-          description:
-            "Empowering organizations with seamless management of their human capital.",
-        },
-        {
-          icon: <Briefcase className="text-yellow-600 hover:text-blue-500" />,
-          label: "On Boarding",
-          description: "Streamline job posting and approval workflows",
-        },
-        {
-          icon: (
-            <CalendarCheck className="text-indigo-600 hover:text-blue-500" />
-          ),
-          label: "Attendance Management",
-          description: "Monitor and track employee attendance effectively.",
-        },
-        {
-          icon: <CreditCard className="text-gray-600 hover:text-blue-500" />,
-          label: "Payroll Management",
-          description: "Automate salary calculations and payments.",
-        },
-        {
-          icon: (
-            <CalendarCheck className="text-indigo-600 hover:text-blue-500" />
-          ),
-          label: "Leave Management",
-          description: "Manage employee leave requests efficiently.",
-        },
-        {
-          icon: <Code className="text-purple-600 hover:text-blue-500" />,
-          label: "Discord Bot",
-          description: "Integrate automation for HR-related tasks via Discord.",
-        },
-        {
-          icon: <MessageSquare className="text-blue-600 hover:text-blue-500" />,
-          label: "Communication Module",
-          description: "Enhance internal communication and collaboration.",
-        },
-        {
-          icon: <ListChecks className="text-teal-600 hover:text-blue-500" />,
-          label: "Task Management",
-          description: "Track and manage employee tasks and projects.",
-        },
-        {
-          icon: <BarChart3 className="text-orange-600 hover:text-blue-500" />,
-          label: "Performance",
-          description: "Analyze and improve employee performance.",
-        },
-        {
-          icon: <HelpCircle className="text-red-600 hover:text-blue-500" />,
-          label: "Help and Support",
-          description: "Access support and HR-related assistance.",
-        },
-      ],
-    },
-    {
-      label: "Recruitment & Onboarding",
-      submenu: [
-        {
-          icon: <Briefcase className="text-yellow-600 hover:text-blue-500" />,
-          label: "Job Posting",
-          description: "Manage and post job listings with ease.",
-        },
-        {
-          icon: <Users className="text-green-600 hover:text-blue-500" />,
-          label: "Candidate Screening",
-          description: "Filter and assess candidates efficiently.",
-        },
-        {
-          icon: (
-            <CalendarCheck className="text-indigo-600 hover:text-blue-500" />
-          ),
-          label: "Interview Scheduling",
-          description: "Automate interview scheduling and notifications.",
-        },
-        {
-          icon: <FileText className="text-gray-600 hover:text-blue-500" />,
-          label: "Offer Letters",
-          description: "Generate and manage job offer documents.",
-        },
-      ],
-    },
-    {
-      label: "Resources",
-      submenu: [
-        {
-          icon: <FileText className="text-gray-600 hover:text-blue-500" />,
-          label: "HR Documents",
-          description: "Access important HR documentation.",
-        },
-        {
-          icon: <MessageSquare className="text-blue-600 hover:text-blue-500" />,
-          label: "Employee Policies",
-          description: "Review company policies and guidelines.",
-        },
-        {
-          icon: <HelpCircle className="text-red-600 hover:text-blue-500" />,
-          label: "FAQs",
-          description: "Find answers to common HR questions.",
-        },
-      ],
-    },
-    {
-      label: "Pricing",
-      submenu: [
-        {
-          icon: <CreditCard className="text-gray-600 hover:text-blue-500" />,
-          label: "Subscription Plans",
-          description: "Choose a plan that fits your needs.",
-        },
-        {
-          icon: <CreditCard className="text-gray-600 hover:text-blue-500" />,
-          label: "Enterprise Solutions",
-          description: "Custom pricing for large-scale businesses.",
-        },
-      ],
-    },
-    {
-      label: "About",
-      submenu: [
-        {
-          icon: <Users className="text-green-600 hover:text-blue-500" />,
-          label: "Our Team",
-          description: "Meet the people behind our success.",
-        },
-        {
-          icon: <MessageSquare className="text-blue-600 hover:text-blue-500" />,
-          label: "Our Mission",
-          description: "Learn about our goals and vision.",
-        },
-      ],
-    },
-    {
-      label: "Services",
-      submenu: [
-        {
-          icon: <Code className="text-purple-600 hover:text-blue-500" />,
-          label: "Custom Software",
-          description: "Get tailored software solutions.",
-        },
-        {
-          icon: <ListChecks className="text-teal-600 hover:text-blue-500" />,
-          label: "Project Management",
-          description: "Optimize project execution with our services.",
-        },
-      ],
-    },
-  ];
-
   const handelSideNav = () => {
     setOpenSideNav((prev) => !prev);
   };
 
+  console.log(location, "dashdfjads");
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [location]);
+
   return (
     <div>
-      <nav className="fixed top-0  w-full z-50 h-[60px] lg:h-[90px] bg-white border-b border-gray-200 shadow-md">
-        <div className="flex w-full items-center justify-between px-6 md:px-2 xl:px-6 pt-4">
+      <nav className="fixed top-0   w-full z-50  bg-white border-b border-gray-200 shadow-md">
+        <div className="flex py-6 md900:py-0 w-full items-center justify-between px-6 md:px-2 xl:px-6 ">
           <div className="flex items-center gap-2 xl:gap-6 flex-shrink-0">
             <Link to="/">
-              <h1 className="font-bold drop-shadow-lg text-2xl  xl:text-2xl whitespace-nowrap">
+              <h1 className="font-bold drop-shadow-lg text-2xl  xl:text-3xl whitespace-nowrap">
                 AMS
               </h1>
             </Link>
 
-            <ul className="hidden md900:flex gap-1 xl:gap-4 items-center text-gray-700">
+            <ul className="hidden md900:flex  gap-2 xl:gap-4 items-center text-gray-700">
               {menuItems.map((item, index) => (
-                <li key={index} className="relative group ">
+                <li key={index} className=" group relative  ">
                   <div
-                    className={`flex items-center gap-1 cursor-pointer whitespace-nowrap text-xs sm:text-sm xl:text-base ${
+                    className={`flex group-hover:text-blue-500 group-hover:cursor-pointer   items-center gap-1 cursor-pointer whitespace-nowrap text-xs sm:text-sm xl:text-base py-8 hover:text-bl ${
                       item.submenu ? "text-black" : "text-blue-500"
                     }`}
                   >
-                    <span>{item.label}</span>
+                    <span className="">{item.label}</span>
                     {item.submenu && (
                       <span>
                         <ChevronDown size={15} />
@@ -212,37 +52,37 @@ const Navbar: React.FC = () => {
                     )}
                   </div>
 
-                  <div className="absolute left-0 top-full pt-2 w-max">
+                  <div className="absolute   duration-500 z-50 left-0 top-full w-max opacity-0 group-hover:opacity-100  h-[0px] overflow-hidden group-hover:h-fit mt-10 group-hover:mt-0 ">
                     <div
-                      className={`bg-white shadow-lg border border-gray-200 rounded-md ${
+                      className={`bg-white shadow-lg border border-gray-200 rounded-md relative ${
                         item.label === "HR Management" ||
                         item.label === "Recruitment & Onboarding"
-                          ? " max-w-[70vw]"
-                          : "w-[250px]"
-                      } opacity-0 group-hover:opacity-100  h-0 overflow-hidden group-hover:h-full mt-10 group-hover:mt-5 transition-all duration-500 ease-in-out`}
+                          ? " "
+                          : ""
+                      }  `}
                     >
                       <ul
-                        className={`p-4 ${
+                        className={` p-5 py-10 ${
                           item.label === "HR Management" ||
                           item.label === "Recruitment & Onboarding"
-                            ? "grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-8"
-                            : "flex flex-col gap-2"
+                            ? "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 lg:gap-6"
+                            : " flex gap-4 flex-col"
                         }`}
                       >
-                        {item.submenu.map((subItem, subIndex) => {
+                        {item?.submenu?.map((subItem, subIndex) => {
                           return (
                             <li
                               key={subIndex}
-                              className="px-4 py-3 border border-gray-100 rounded-md text-sm hover:border-l-6 hover:rounded-lg  hover:border-l-blue-400 transition-all duration-200 hover:scale-105 "
+                              className="px-4 py-3 border-l-6 border-white shadow-gray-200 rounded-md text-sm hover:drop-shadow-xl hover:rounded-xl  hover:border-l-blue-400   overflow-hidden duration-200 hover:scale-105 "
                             >
-                              <div className="flex items-center gap-2">
+                              <div className="flex items-center gap-4 hover:drop-shadow-lg">
                                 {subItem.icon}
 
                                 <div className="flex flex-col gap-2">
                                   <p className="font-semibold">
                                     {subItem.label}
                                   </p>
-                                  <p className="text-[10px]">
+                                  <p className="text-[12px] hidden lg:block w-[250px]">
                                     {subItem?.description}
                                   </p>
                                 </div>
@@ -253,7 +93,6 @@ const Navbar: React.FC = () => {
                       </ul>
                     </div>
                   </div>
-                  {/* )} */}
                 </li>
               ))}
             </ul>
@@ -286,7 +125,7 @@ const Navbar: React.FC = () => {
           </button>
 
           {openSideNav && (
-            <div className="md900:hidden absolute top-14 left-0 w-full bg-white shadow-lg z-50">
+            <div className="md900:hidden absolute top-14 left-0 w-full bg-white h-screen overflow-auto shadow-lg z-50">
               <ul className="w-full px-4 text-gray-700">
                 {menuItems.map((item, index) => (
                   <li
@@ -310,12 +149,16 @@ const Navbar: React.FC = () => {
                     {openDropdownIndex === index && item.submenu && (
                       <ul className="bg-gray-50 rounded-md my-2">
                         {item.submenu.map((subItem, subIndex) => (
-                          <li
-                            key={subIndex}
-                            className="py-3 px-4 text-sm hover:bg-gray-100 border-b border-gray-100 last:border-b-0"
-                          >
-                            {subItem.label}
-                          </li>
+                          <div className="flex gap-4 p-2">
+                            {subItem.icon}
+
+                            <li
+                              key={subIndex}
+                              className="py-3 px-4 text-sm hover:bg-gray-100 border-b border-gray-100 last:border-b-0"
+                            >
+                              {subItem.label}
+                            </li>
+                          </div>
                         ))}
                       </ul>
                     )}

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Login: React.FC = () => {
   const { register } = useForm();
   return (
-    <div className="flex md900:flex-row flex-col gap-2 h-screen justify-center items-center px-10 xl:px-72">
+    <div className="flex md900:flex-row flex-col gap-2 pt-20 justify-center items-center px-10 xl:px-72">
       <div className="w-full flex justify-center">
         <img
           src="https://login.rapidhr.com/assets/login/organization.svg"

@@ -1,18 +1,21 @@
 import React from "react";
 import Hero from "../components/ui/Hero";
 import PlatFormFeatures from "../components/ui/PlatFormFeatures";
-import HRManagement from "../components/ui/HRManagement";
 import TimeAndAttendance from "../components/ui/TimeAndAttendance";
-import PayRoleAndManagement from "../components/ui/PayRoleAndManagement";
 import Client from "../components/ui/Client";
-import HrHelpDesk from "../components/ui/HrHelpDesk";
+import { hrData } from "../components/ui/CardComponent";
 import WallOfLove from "../components/ui/WallOfLove";
-import { Swiper, SwiperSlide } from "swiper/react";
 import Swipers from "../components/Swiper";
-import { WallOfLoveData } from "../data/data";
-import PerformanceManagement from "../components/ui/PerformanceManagement";
-import Recruient from "../components/ui/Recruitment";
+import {
+  hrManagementData,
+  payRollManagement,
+  performanceManagement,
+  recruitmentManagement,
+  WallOfLoveData,
+} from "../data/data";
+
 import Footer from "../components/ui/Footer";
+import CardComponent from "../components/ui/CardComponent";
 
 const testimonials = [
   {
@@ -40,15 +43,35 @@ const testimonials = [
 
 const Home: React.FC = () => {
   return (
-    <div>
+    <div className="mt-5">
       <div className=" ">
         <Hero />
         <PlatFormFeatures />
-        <HRManagement />
+        <CardComponent
+          className=" flex flex-col-reverse md900:flex-row-reverse "
+          description={hrManagementData?.description}
+          image={hrManagementData?.image}
+          list={hrManagementData?.list}
+          title={hrManagementData?.title}
+        />
         <TimeAndAttendance />
-        <PayRoleAndManagement />
+        <CardComponent
+          description={payRollManagement?.description}
+          image={payRollManagement?.image}
+          list={payRollManagement?.list}
+          title={payRollManagement?.title}
+          className={"flex flex-col md900:flex-row-reverse"}
+        />
+
         <Client />
-        <HrHelpDesk />
+
+        <CardComponent
+          description={hrData?.description}
+          image={hrData?.image}
+          list={hrData?.list}
+          title={hrData?.title}
+          className="flex flex-col-reverse md900:flex-row"
+        />
 
         <section className="py-10 px-4">
           <div className="py-6">
@@ -73,8 +96,21 @@ const Home: React.FC = () => {
             />
           </div>
         </section>
-        <PerformanceManagement />
-        <Recruient />
+        <CardComponent
+          bgColor=" bg-gray-50"
+          description={performanceManagement?.description}
+          image={performanceManagement?.image}
+          list={performanceManagement?.list}
+          title={performanceManagement?.title}
+          className="flex flex-col md900:flex-row-reverse "
+        />
+        <CardComponent
+          description={recruitmentManagement?.description}
+          image={recruitmentManagement?.image}
+          list={recruitmentManagement?.list}
+          title={recruitmentManagement?.title}
+          className="flex flex-col md900:flex-row "
+        />
         <div className="pb-30 p-[5%]">
           <div className="bg-blue-100 flex-col md:flex-row gap-10  flex justify-between py-12 px-4 ">
             <div className="flex flex-col justify-center items-center">

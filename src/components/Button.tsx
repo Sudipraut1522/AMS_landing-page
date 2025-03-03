@@ -6,7 +6,7 @@ type ButtonProps = {
   labelClassName?: string;
   onClick?: () => void;
   className?: string;
-  icones?: React.ReactNode;
+  icone?: React.ReactNode;
   disabled?: boolean;
 };
 
@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
   labelClassName = "",
   onClick,
   className = "",
-  icones,
+  icone,
   disabled = false,
   ...props
 }) => {
@@ -31,7 +31,7 @@ const Button: React.FC<ButtonProps> = ({
       {...props}
     >
       <span className={labelClassName}>{labelName}</span>
-      {icones && <span>{icones}</span>}
+      {icone && <span>{icone}</span>}
     </button>
   );
 };

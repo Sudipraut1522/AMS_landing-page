@@ -5,7 +5,7 @@
 @import "swiper/css/pagination";
 
 @theme {
-  --breakpoint-md900: 61.25rem; /* 900px */
+  --breakpoint-md900: 57rem; /* 900px */
 }
 .swiper-pagination-bullet {
   border-radius: 100%;
@@ -42,8 +42,9 @@
   --text-tiny: 0.625rem;
   --text-tiny--line-height: 1.5rem;
 
-  --color-primary: #0000ff;
+  --color-primary: #600fff;
   --color-secondary: #33cc33;
+  --color-sky:#B1E5EC
 
   --color-mint-300: oklch(0.85 0.22 145);
   --color-mint-400: oklch(0.78 0.25 145);

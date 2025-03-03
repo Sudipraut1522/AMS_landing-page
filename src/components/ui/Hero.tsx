@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Button";
 import { CircleCheck } from "lucide-react";
 import { motion } from "framer-motion";
+import { TrustedBy } from "../../data/data";
 
 const variants = {
   hidden: { opacity: 0, y: 30 },
@@ -16,36 +17,10 @@ const staggerContainer = {
   },
 };
 
-export const TrustedBy = [
-  {
-    label: "Companies",
-    value: "5+",
-    image:
-      "https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/sec-house.svg",
-  },
-  {
-    label: "Employees",
-    value: "100+",
-    image:
-      " https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/Frame-7.svg  ",
-  },
-  {
-    label: "Features",
-    value: "50+",
-    image:
-      "    https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/Frame-8.svg",
-  },
-  {
-    label: "Cities",
-    value: "5+",
-    image:
-      "https://d27snf008ywx0f.cloudfront.net/wp-content/uploads/2025/01/Frame-10.svg",
-  },
-];
 const Hero: React.FC = () => {
   return (
     <motion.section
-      className="px-4 md:pt-6 bg-blue-100 md:bg-white"
+      className="px-4 md:pt-6 bg-blue-100 md:bg-white py-6 md900:py-0"
       initial="hidden"
       animate="visible"
       variants={staggerContainer}
@@ -89,10 +64,10 @@ const Hero: React.FC = () => {
               <Button
                 labelClassName="font-semibold"
                 labelName="Schedule a demo"
-                className="bg-blue-600 flex xl:px-6 justify-center text-white py-3"
+                className="bg-primary flex xl:px-6 justify-center text-white py-3"
               />
               <p className="text-[14px] items-center flex gap-2 text-center">
-                <CircleCheck className="text-green-500" />
+                <CircleCheck className="text-secondary" />
                 <span>No Commitment</span>
               </p>
             </div>
